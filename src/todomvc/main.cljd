@@ -1,0 +1,42 @@
+(ns todomvc.main
+  (:require [cljd.flutter :as f]
+            ["package:flutter/material.dart" :as m]))
+
+(def app-db 
+  (atom {}))
+         
+
+(def ^m/Widget todos-screen
+  (f/widget
+   :get     [m/Navigator]
+   (m/Scaffold
+    .appBar (m/AppBar
+             .title (m/Text "Todos"))
+    .body   (m/Center
+             .child (m/ElevatedButton
+                     .onPressed (fn [] (.pushNamed navigator "/new") nil)
+                     .child     (m/Text "Push me"))))))
+
+
+(def ^m/Widget new-screen
+  (f/widget
+   :get     [m/Navigator]
+   (m/Scaffold
+    .appBar (m/AppBar
+             .title (m/Text "New todo"))
+    .body   (m/Center
+             .child (m/ElevatedButton
+                     .onPressed (fn [] (.pushNamed navigator "/todos") nil)
+                     .child     (m/Text "Push me"))))))
+
+
+(defn main []
+  (f/run
+   (m/MaterialApp
+    .title        "TodoMVC v1"
+    .theme        (m/ThemeData .primarySwatch m.Colors/red)
+    .home         todos-screen
+    .routes       {"/todos" (fn ^m/Widget [^m/BuildContext ctx] todos-screen)
+                   "/new"   (fn ^m/Widget [^m/BuildContext ctx] new-screen)}
+    .debugShowCheckedModeBanner false)))
+
