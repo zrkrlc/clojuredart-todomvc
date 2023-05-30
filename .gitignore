@@ -158,3 +158,6 @@ tags
 .clojuredart/
 lib/cljd-out/
 test/cljd-out/
+
+## CUSTOM
+.localenv
