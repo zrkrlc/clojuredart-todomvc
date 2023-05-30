@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/cljd_clojure_todomvc_cljd.iml" filepath="$PROJECT_DIR$/cljd_clojure_todomvc_cljd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/cljd_clojure_todomvc_cljd_android.iml" filepath="$PROJECT_DIR$/android/cljd_clojure_todomvc_cljd_android.iml" />
+    </modules>
+  </component>
+</project>

@@ -153,3 +153,8 @@ tags
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,dart,flutter,clojure,vim
+# ClojureDart
+.cpcache/
+.clojuredart/
+lib/cljd-out/
+test/cljd-out/
